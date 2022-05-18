@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>hey</title>
+  <link href="css/styles.css" rel="stylesheet" type="text/css">
+  <script>
+    function showTab(link, content) {
+      //  hide all tabs
+      var tabs = document.getElementsByClassName("tab");
+      for (i = 0; i < tabs.length; i++) {
+          tabs[i].style.display = "none";
+      }
+
+      // Get all elements with class="tablinks" and remove the class "active"
+      var tablinks = document.getElementsByClassName("tablink");
+      for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" selectedTab", "");
+      }
+
+      // Show the current tab, and add an "active" class to the button that opened the tab
+      document.getElementById(content).style.display = "block";
+      link.className += " selectedTab";
+    }
+
+    window.onload = function() {
+      showTab(document.getElementsByClassName('tablink')[0], 'booksWrap');
+    };
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script>
+    // Favorite toggle for books
+    $(document).ready(function() {
+      var favsToggled = false;
+      $('#favorite-toggle').click(function(){
+        if (favsToggled === false) {
+          $('ul li').hide();
+          $('ul li.loved').show();
+          $(this).text('Show All Entries');
+        } else {
+          $('ul li').show();
+          $(this).text('Show Favorites Only');
+        }
+        favsToggled = !favsToggled;
+        return false;
+     });
+    });
+  </script>
+
+</head>
+<body>
+<div id='wrap'>
+<div id='readingNav'>
+  <a href="index.html"><span id='hanghome' class='small-boxed shadowed'>←</span></a>
+  <a href="#null"><div class="small-boxed shadowed tablink" onclick="showTab(this, 'booksWrap')">Books</div></a>
+  <a href="#null"><div class="small-boxed shadowed tablink" onclick="showTab(this, 'articlesWrap')">Articles</div></a>
+  <a href="#null"><div class="small-boxed shadowed tablink" onclick="showTab(this, 'quotesWrap')">Quotes</div></a>
+</div>
+<br>
+<div id="booksWrap" class="tab boxed shadowed">
+  <h3><a href="#books">Books</a></h3>
+  <p><b>Some books that have stuck with me, loosely grouped. Reach out if you'd like to discuss.</b></p>
+  <a id="favorite-toggle" href="#">Show Favorites Only</a>
+  <ul class='rated'>
+    <li class='loved'><b>Sri Aurobindo and India's Rebirth: </b>I believe Sri Aurobindo to be the most underrated thinker, writer, and poet in history. This is an audiobook of his political writings, and contains my favorite speech of all time, the Uttarpara Speech.
+      <blockquote>
+        If Thou art, then Thou knowest my heart. Thou knowest that I do not ask for Mukti, I do not ask for anything which others ask for. I ask only for strength to uplift this nation, I ask only to be allowed to live and work for this people whom I love and to whom I pray that I may devote my life.
+      </blockquote>
+    </li>
+
+    <li class='loved'><b>How Asia Works: </b>Read it three times. Such a dense, well-researched book, and a great introduction to developmental economics.</li> 
+    <li class='loved'><b>Managed by Markets - Gerald F Davis: </b>Great book on the history of the corporation and the financialization of America.</li>
+    <li class='loved'><b>One Straw Revolution: </b>Not just about farming. Explores the rational vs intuitive mind, and the relationship between man and nature.</li>
+    <li class='loved'><b>Antifragile: </b>Worldview shifting book. The ideas are simple, you can get them in a two sentence summary, but the depth is in watching Taleb apply them to all aspects of life.</li>
+    <li class='loved'><b>Inadequate Equilibria</b></li>
+    <li><b>The Unsettling of America - Wendell Berry</b></li> 
+
+    <li><b>Futurism: An Anthology: </b>Hate the ethics, love the vitality. Favorites are the manifesto and "Let's Kill the Moonlight"</li> 
+    <li><b>The Pike: The Pike: Gabriele D'Annunzio, Poet, Seducer and Preacher of War: </b>Again, hate the ethics, love the vitality. Fascinating life and incredible rhetoric.
+      <blockquote>
+        He is beside himself. ‘I feel my own pale face burn like a white flame. There is nothing of me in me. I am as the demon of the tumult … Each of my words resounds beneath my cranium like the reverberation of curved metal.’ 
+        As his tirade reaches its climax he produces a prop, a sword which once belonged to Nino Bixio, the most aggressive of Garibaldi’s lieutenants. ‘I take it and draw it … I press my lips to the naked blade … I abandon my soul to delirium.’ 
+        The crowd weeps and howls.
+        D’Annunzio thunders on. He is urging his listeners to ensure, by any means, up to and including murder, that the appeasers should not be allowed to take their seats in parliament again. ‘Make out lists. Proscribe them. Be pitiless. You have the right.’ 
+        His speech triggers a riot. Hundreds of people are arrested.
+      </blockquote>
+    </li> 
+
+    <li class='loved'><b>Emerson: The Mind on Fire - John D Richardson</b>Love the focus on Emerson's internal development, rather than external events. Also serves as an intellectual history of the American Renaissance.</li>
+    <li><b>Goethe: Life as a Work of Art: </b>Goethe is my role model. Poet, statesman, scientist, all around beautiful person.</li>
+    <li><b>The Closing of the American Mind: </b>A call to read the classics.</li> 
+    <li class='loved'><b>Plato's Republic: </b>On the nature of the mind, it's relation to politics, and the question of happiness-- this book has everything.</li>
+    <li class='loved'><b>Nietzsche - Lou Salome: </b>Recommend to all as the greatest overview of Nietzsche's way thought and life.</li> 
+    <li><b>Nietzsche - Ecce Homo</b></li> 
+    <li><b>Nietzsche - The Gay Science</b></li> 
+    <li><b>Kierkegaard's Notebooks and Journals: </b>This, Conversations with Goethe, and The Gay Science satisfy my scroll-through-twitter impulse in a much more rewarding way.</li> 
+    <li><b>Awaiting God - Simone Weil: </b>You can feel how deeply she cares about God, man, and the world.</li> 
+    <li><b>The Metaphysics of War - Julius Evola: </b>99.9% of you will think this book is insane, but that's why you must read it. It's valuable to see how the traditionalists think, especially today as Evola trends among the right.</li> 
+
+    <li class='loved'><b>Biology of Belief - Bruce Lipton</b></li> 
+    <li><b>Light - Dr. Jacob Liberman</b>Metaphysical perspective on light and sight. Out there, but rings true for me.</li> 
+
+    <li><b>Nutrition & The Nature of Substance - Rudolf Hauschka: </b>The occult side of chemistry, in the tradition of Rudolf Steiner, written by the founder of a popular German skincare company.</li> 
+    <li><b>Agriculture Course - Rudolf Steiner: </b>Steiner's clairvoyant insights applied to farming.</li> 
+
+    <li class='loved'><b>On the National Value of Art - Sri Aurobindo: </b>see <a href="https://twitter.com/kbala444/status/1403715330774470667">twitter thread</a> for highlights</li>
+
+    <li class='loved'><b>The Surrender Experiment: </b>Inspiring story, filled with miracles. A great model of karma yoga. Can you surrender your way into running a billion dollar tech company?</li> 
+    <li><b>Autobiography of a Yogi</b></li>
+    <li><b>Can't Hurt Me - David Goggins:</b> The story of a Western aescetic who has mastered discipline and conquered suffering.</li>
+
+    <li class='loved'><b>Emmanuel Swedenborg, Collected Works: </b>I have so much praise for this man and his worldview, will write about it soon. I recommend this [incredible youtube channel](https://www.youtube.com/watch?v=3Q14EcEwQVQ) as an intro.</li>
+    <li><b>Rudolf Steiner, Collected Works: </b>A lifetime of clairvoyant realizations. I lack the powers to validate any of it, but it's great food for contemplation.</li>
+
+    <li class='loved'><b>Body The Greatest Gadget & Mystic's Musings - Sadhguru: </b>People are skeptical of 'Youtube Gurus', but Sadhguru is the real deal and his teachings are a great boon. You can go to the dhyanalinga and feel his power for yourself.</li>
+    <li class='loved'><b>Sadhguru: More Than A Life:</b> The story of the dhyanalinga consecration reads like fantasy, but I'm convinced it's non-fiction.<li>
+    <li><b>Thought Power - Swami Sivananda: </b>Thoughts as real entities, existing on a subtler plane, is a concept common to many mystic traditions. Theosophists, Steiner, Aurobindo, and Sivananda all write about this.</li>
+    <li class='loved'><b>Integral Healing - Sri Aurobindo & The Mother</b></li>
+    <li class='loved'><b>The Synthesis of Yoga - Sri Aurobindo: </b>Everything by Sri Aurobindo is incredible and you should just read them all. I'm slowly working my way through all his books. </li>
+    <li><b>Vivekananda, Collected Works</b></li>
+    <li><b>Fame, Fortune, Ambition - Osho</b></li>
+    <li><b>The Book of Secrets - Osho</b></li>
+
+    <li class='loved'><b>Hindu Dharma - Maha Periyava: </b>An introduction to Hindu culture from one of India's greatest contemporary saints.</li> 
+    <li class='loved'><b>Tantra Illuminated: </b>My highest recommendation for an introduction to tantra.</li>
+    <li class='loved'><b>Mantra Yoga and the Primal Sound:</b> Speech and sound are much more powerful than we realize. The syllables used in mantra are selected with great care.</li>
+
+    <li class='loved'><b>Letting Go - David Hawkins: </b>Great intro to spirituality, along with Eckhart Tolle.</li>
+    <li><b>Power of Now, Practicing the Power of Now, The New Earth - Eckhart Tolle: </b>A great introduction to spiritual practice. Like David Hawkins, the phrasing moves me to a more meditative state.</li>
+    
+    <li><b>You Are The Placebo - Joe Dispenza: </b>I see Dispenza as the best messenger of new age / law of attraction / pseudo-chakra spirituality. It's not traditional but still valuable.</li>
+    <li><b>Cosmic Trigger - Robert Anton Wilson: </b><a href="https://blog.karthiksthings.com/posts/cosmic-trigger-robert-anton-wilson-notes/">notes here</a></li>
+    <li><b>Prometheus Rising - Robert Anton Wilson: </b> The claim: the world is whatever you perceive it to be. Imagine a fun and happy worldview and that's your life now.</li>
+
+    <li><b>Function of the Orgasm - Willhelm Reich</b> My favorite Western psychologist. Independently discovered prana, life energy, and called it orgone. Muscular armoring is a powerful concept now revived by books like The Body Keeps the Score and practices like Trauma Release Excercises. I also recommend the books of Reich's student, Alexander Lowen, to anyone looking to feel more alive.</li>
+
+    <li><b>Taipei (Tao Lin):</b> I have a little Tao Lin fan page over <a href='taolin.html'>here</a>.</li>
+    <li><b>Trip <a href="taolin.html">(Tao Lin)</a>: </b>I read this when I was a hyper-rationalist skeptic, and took Tao Lin seriously only because I loved Taipei. I read it at the perfect time, along with Inadequate Equilibria and Antifragile, and the three books worked in tandem to instill in me a reverence for tradition.</li>
+    <li><b>The Dharma Bums</b> For style and energy, not plot. Liked this much more than On the Road or Big Sur.</li>
+    <li class='loved'><b>The Book of Disquiet - Fernando Pessoa, trans. Richard Zenith</b></li>
+    <li class='loved'><b>My Year of Rest and Relaxation:</b> Again, love this only for style. Funny, precise, relatable. Some <a href="notes/rar.txt">quotes</a></li>
+    <li><b>Freedom (Jonathan Franzen): </b>Contains some of the realest contemporary dialogue and characters I've read. Each one felt like someone I knew.<p></li>
+    <li><b>One Year A Bike:</b> Beautiful photo book. Good story at first, but quickly devolved into a slog: "Day 203: Still on my bike. In a desert for another 300 miles. This is kinda shitty."</li>
+    <li><b>Tulsa (Larry Clark):</b> Photo book of self destructive youth, by the director of Kids (1995), a raw movie of similar themes.</li>
+    <li><b>Born to Run: </b>"Ultramarathoners are body artists, playing with the palette of human endurance." Also, an investigation of the fascinating Tarahumara tribe. Greatly enjoyed this despite not being a runner.</li>
+
+  </ul>
+</div>
+<div id="articlesWrap" class="tab boxed shadowed">
+  <h3><a href="#articles">Articles</a></h3>
+  <p><b>My favorite articles</b>
+  <ul>
+    <li><a href="http://scholars-stage.blogspot.com/2018/08/tradition-is-smarter-than-you-are.html">Tradition is Smarter Than You Are</a> - Changed my worldview. I had very little respect for tradition before reading Trip, then this, and then Antifragile. Everything had to have a reason and a double-blind, randomized, placebo-controlled trial behind it. Now I hit up the herbalism and Ayurveda sections of alternative bookstores on the regular.</li>
+    <li><a href="http://reader-of-depressing-books.blogspot.com/2006/07/">~11,000-word post with tao lin & kevin sampsell emails & thoughts re editing</a> - Enlightening article from <a href="taolin.html">someone</a> with a sharp and personal understanding of people, loneliness, and art.</li>
+    <li><a href="http://www.refinethemind.com/the-beat-generation-worldview-in-kerouacs-on-the-road/">The Beat Generation Worldview in Kerouac’s On the Road</a> - Great article explaining the Beat Generation's infatuation with life.</li>
+  </ul>
+</div>
+<div id="quotesWrap" class="tab boxed shadowed">
+  <h3><a href="#quotes">Quotes</a></h3>
+  <ul>
+    <li><blockquote>When one tugs at a single thing in nature, he finds it attached to the rest of the world.</blockquote><footer> - John Muir</footer></li>
+    <li><blockquote>If some logical person has not committed suicide yet, it simply means he is mediocre.</blockquote><footer>- Osho</footer></li>
+
+    <li><blockquote>God is the one goal of all our passions and emotions. If you want to be angry, be angry with Him. Chide your Beloved, chide your Friend. Whom else can you safely chide? Mortal man will not patiently put up with your anger; there will be a reaction. If you are angry with me I am sure quickly to react, because I cannot patiently put up with your anger. Say unto the Beloved, "Why do You not come to me; why do You leave me thus alone?" Where is there any enjoyment but in Him? What enjoyment can there be in little clods of earth? It is the crystallised essence of infinite enjoyment that we have to seek, and that is in God. Let all our passions and emotions go up unto Him. They are meant for Him, for if they miss their mark and go lower, they become vile; and when they go straight to the mark, to the Lord, even the lowest of them becomes transfigured. All the energies of the human body and mind, howsoever they may express themselves, have the Lord as their one goal, as their Ekâyana.</blockquote><footer> - Swami Vivekananda</footer></li>
+    <li><blockquote>Every night in meditation, throw yourself at the feet of the Lord. From the depths of your heart, cry to Him. Cry for Him until your head and your heart seem to burst with longing for Him: "You must come. Reveal Thyself to me!"</blockquote><footer> - Swami Yogananda</footer></li>
+    <li><blockquote>Thou hast made us for Thyself and our hearts are restless till they rest in Thee.</blockquote><footer> - Psalms of Thomas</footer></li>
+    <li><blockquote>Ye are the light of the world. A city that is set on an hill cannot be hid. Neither do men light a candle, and put it under a bushel, but on a candlestick; and it giveth light unto all that are in the house. Let your light so shine before men, that they may see your good works, and glorify your Father which is in heaven.</blockquote><footer> - Matthew 5:14</footer></li>
+  </ul>
+</div>
+</div>
+</body>
+</html>
