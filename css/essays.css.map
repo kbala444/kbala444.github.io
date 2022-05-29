@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,YAAY,CAAC;EACT,OAAO,EAAE,IAAI;EACb,qBAAqB,EAAE,cAAc;EACrC,GAAG,EAAE,GAAG;EACR,cAAc,EAAE,mBAAmB;EACnC,OAAO,EAAE,eAAe;CAAG",
+    "sources": [
+        "essays.sass"
+    ],
+    "names": [],
+    "file": "essays.css"
+}
